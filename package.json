@@ -1,6 +1,6 @@
 {
   "homepage": "https://garronej.github.io/list_org_published_modules/",
-  "name": "etalab_demo",
+  "name": "list_org_published_modules_demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
