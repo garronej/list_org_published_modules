@@ -1,71 +1,54 @@
 {
-    "name": "list_org_published_modules",
-    "version": "0.0.1",
-    "description": "A CLI tool that lists all the modules published by a given GitHub organization for a given ecosystem (npm, maven, ect.)",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/garronej/list_org_published_modules.git"
-    },
-    "main": "dist/lib/index.js",
-    "types": "dist/lib/index.d.ts",
-    "bin": {
-        "list_org_published_modules": "dist/bin/list_org_published_modules.js"
-    },
-    "scripts": {
-        "test": "node dist/test",
-        "build": "tsc",
-        "lint:check": "eslint . --ext .ts,.tsx",
-        "lint": "npm run lint:check -- --fix",
-        "_format": "prettier '**/*.{ts,tsx,json,md}'",
-        "format": "npm run _format -- --write",
-        "format:check": "npm run _format -- --list-different"
-    },
-    "lint-staged": {
-        "*.{ts,tsx}": [
-            "eslint --fix"
-        ],
-        "*.{ts,tsx,json,md}": [
-            "prettier --write"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged -v"
-        }
-    },
-    "author": "u/garronej",
-    "license": "MIT",
-    "files": [
-        "src/",
-        "!src/test/",
-        "dist/",
-        "!dist/test/",
-        "!dist/tsconfig.tsbuildinfo"
+  "name": "etalab_demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "evt": "2.0.0-beta.27",
+    "list_org_published_modules": "^0.0.1",
+    "onyxia-ui": "^0.9.11",
+    "powerhooks": "^0.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "tss-react": "^0.4.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ],
-    "keywords": [
-        "etalab",
-        "npm",
-        "GitHub"
-    ],
-    "homepage": "https://github.com/garronej/list_org_published_modules",
-    "dependencies": {
-        "@octokit/rest": "^18.7.1",
-        "node-fetch": "^2.6.1",
-        "tsafe": "^0.4.1",
-        "url-join": "^4.0.1",
-        "evt": "2.0.0-beta.27"
-    },
-    "devDependencies": {
-        "@types/node": "^15.3.1",
-        "@types/node-fetch": "^2.5.12",
-        "@types/url-join": "^4.0.1",
-        "@typescript-eslint/eslint-plugin": "^4.24.0",
-        "@typescript-eslint/parser": "^4.24.0",
-        "eslint": "^7.26.0",
-        "eslint-config-prettier": "^8.3.0",
-        "husky": "^4.3.8",
-        "lint-staged": "^11.0.0",
-        "prettier": "^2.3.0",
-        "typescript": "^4.2.4"
+    "rules": {
+      "no-sequences": "off",
+      "react-hooks/exhaustive-deps": "off"
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

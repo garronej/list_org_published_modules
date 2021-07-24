@@ -1,100 +1,46 @@
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/6702424/126871360-7461f265-404f-489b-b819-1dabf7d0d459.png">  
-</p>
-<p align="center">
-    <i>Lists all the modules published by a given GitHub organization for a given ecosystem (npm, maven, ect.)</i>
-    <br>
-    <br>
-    <img src="https://github.com/garronej/list_org_published_modules/workflows/ci/badge.svg?branch=main">
-    <img src="https://img.shields.io/bundlephobia/minzip/list_org_published_modules">
-    <img src="https://img.shields.io/npm/dw/list_org_published_modules">
-    <img src="https://img.shields.io/npm/l/list_org_published_modules">
-</p>
-<p align="center">
-  <a href="https://github.com/garronej/list_org_published_modules">Web app</a>
-</p>
+# Getting Started with Create React App
 
-This tool take as input a GitHub organization or GitHub user name and list the modules
-it publishes on the major package manager repository: npm, maven, ect.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Note that it isn't a simple database query or API request, thus it is meant to be run
-periodically or triggered by webhooks.
+## Available Scripts
 
-**As of now this module ony works with NPM**
+In the project directory, you can run:
 
-# Run as a CLI tool
+### `yarn start`
 
-Example with [Etalab](https://github.com/Etalab)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```bash
-$ npx list_org_published_modules etalab --verbose
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-output (after ~4minutes):
+### `yarn test`
 
-```jsonc
-[
-    {
-        "repoName": "codes-postaux",
-        "modules": [
-            {
-                "type": "npm",
-                "moduleName": "codes-postaux",
-                "packageJsonDirPath": "/"
-            }
-        ]
-    },
-    {
-        "repoName": "monuments-historiques",
-        "modules": [
-            {
-                "type": "npm",
-                "moduleName": "@sgmap/monuments-historiques",
-                "packageJsonDirPath": "/"
-            }
-        ]
-    },
-    {
-        "repoName": "api-geo",
-        "modules": [
-            {
-                "type": "npm",
-                "moduleName": "@etalab/api-geo",
-                "packageJsonDirPath": "/"
-            }
-        ]
-    }
-    //...Many more entries
-]
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-If you run the tools multiple times you will soon reach the GitHub API rate limit.
-To fix it, [create a GitHub Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) and provide it as the environnement variable `GITHUB_TOKEN` when you run the build tool.
+### `yarn build`
 
-# Use it in a Node or a Web project.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```bash
-npm install list_org_published_modules
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```typescript
-import {
-    createOctokit,
-    listGitHubOrganizationPublishedModulesFactory,
-} from "list_org_published_modules";
-//On the browser fetch is defined on window.fetch you don't need to import it.
-import fetch from "node-fetch";
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-const githubOrganizationName = process.argv[2];
+### `yarn eject`
 
-const { listGitHubOrganizationPublishedModules } = listGitHubOrganizationPublishedModulesFactory({
-    ...createOctokit({ "github_token": undefined }),
-    fetch,
-});
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-const { evtRepoModules } = listGitHubOrganizationPublishedModules({ githubOrganizationName });
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-evtRepoModules.attach(console.log);
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-NOTE: The result are dispatched via an [Evt](https://github.com/garronej/evt)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
