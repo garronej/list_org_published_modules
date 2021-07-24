@@ -32,7 +32,7 @@ $ npx list_org_published_modules etalab --verbose
 
 output (after ~4minutes):
 
-```json
+```jsonc
 [
     {
         "repoName": "codes-postaux",
