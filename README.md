@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/npm/l/list_org_published_modules">
 </p>
 <p align="center">
-  <a href="https://github.com/garronej/list_org_published_modules">Web app</a>
+  <a href="https://garronej.github.io/list_org_published_modules/">Try it!</a>
 </p>
 
 This tool take as input a GitHub organization or GitHub user name and list the modules
@@ -98,3 +98,7 @@ evtRepoModules.attach(console.log);
 ```
 
 NOTE: The result are dispatched via an [Evt](https://github.com/garronej/evt)
+
+# Development
+
+The test app source code is located on the [test-app branch](https://github.com/garronej/list_org_published_modules/tree/test-app) and deployed via [this workflow](https://github.com/garronej/list_org_published_modules/blob/main/.github/workflows/deploy-test-app.yaml)
