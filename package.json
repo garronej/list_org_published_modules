@@ -1,21 +1,19 @@
 {
     "name": "list_org_published_modules",
-    "version": "0.0.0",
-    "description": "A CLI tool that lists all the modules published by a given GitHub organisation for a given ecosystem (npm, maven, ect.)",
+    "version": "0.0.1",
+    "description": "A CLI tool that lists all the modules published by a given GitHub organization for a given ecosystem (npm, maven, ect.)",
     "repository": {
         "type": "git",
         "url": "git://github.com/garronej/list_org_published_modules.git"
     },
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "dist/lib/index.js",
+    "types": "dist/lib/index.d.ts",
+    "bin": {
+        "list_org_published_modules": "dist/bin/list_org_published_modules.js"
+    },
     "scripts": {
-        "test": "node dist/test/",
-        "cdn:bundle:.js": "simplifyify dist/index.js -s list_org_published_modules -o dist/bundle.js --debug --bundle",
-        "cdn:bundle:.min.js": "terser dist/bundle.js -cmo dist/bundle.min.js",
-        "cdn:bundle": "npm run cdn:bundle:.js && npm run cdn:bundle:.min.js",
-        "cdn:esm": "tsc -p tsconfig.esm.json",
-        "cdn": "npm run cdn:bundle && npm run cdn:esm",
-        "build": "tsc && npm run cdn",
+        "test": "node dist/test",
+        "build": "tsc",
         "lint:check": "eslint . --ext .ts,.tsx",
         "lint": "npm run lint:check -- --fix",
         "_format": "prettier '**/*.{ts,tsx,json,md}'",
@@ -44,20 +42,30 @@
         "!dist/test/",
         "!dist/tsconfig.tsbuildinfo"
     ],
-    "keywords": [],
+    "keywords": [
+        "etalab",
+        "npm",
+        "GitHub"
+    ],
     "homepage": "https://github.com/garronej/list_org_published_modules",
+    "dependencies": {
+        "@octokit/rest": "^18.7.1",
+        "node-fetch": "^2.6.1",
+        "tsafe": "^0.4.1",
+        "url-join": "^4.0.1",
+        "evt": "2.0.0-beta.27"
+    },
     "devDependencies": {
         "@types/node": "^15.3.1",
+        "@types/node-fetch": "^2.5.12",
+        "@types/url-join": "^4.0.1",
         "@typescript-eslint/eslint-plugin": "^4.24.0",
         "@typescript-eslint/parser": "^4.24.0",
         "eslint": "^7.26.0",
         "eslint-config-prettier": "^8.3.0",
-        "evt": "^1.9.14",
         "husky": "^4.3.8",
         "lint-staged": "^11.0.0",
         "prettier": "^2.3.0",
-        "simplifyify": "^8.0.4",
-        "terser": "^5.7.0",
         "typescript": "^4.2.4"
     }
 }
