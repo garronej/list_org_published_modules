@@ -50,7 +50,7 @@ export function listGitHubOrganizationPublishedModulesFactory(params: {
                 const moduleName = await (async () => {
                     const resText = await fetch(
                         urlJoin(
-                            "https://raw.github.com",
+                            "https://raw.githubusercontent.com",
                             repository.full_name,
                             repository.default_branch ?? "main",
                             "package.json",
