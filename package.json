@@ -1,6 +1,6 @@
 {
     "name": "list_org_published_modules",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A CLI tool that lists all the modules published by a given GitHub organization for a given ecosystem (npm, maven, ect.)",
     "repository": {
         "type": "git",
