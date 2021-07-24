@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/6702424/126871360-7461f265-404f-489b-b819-1dabf7d0d459.png">  
+    <img src="https://user-images.githubusercontent.com/6702424/126882975-441bc414-f3cc-45ba-ad7a-72208945678f.png">  
 </p>
 <p align="center">
     <i>Lists all the modules published by a given GitHub organization for a given ecosystem (npm, maven, ect.)</i>
