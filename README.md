@@ -10,9 +10,6 @@
     <img src="https://img.shields.io/npm/dw/list_org_published_modules">
     <img src="https://img.shields.io/npm/l/list_org_published_modules">
 </p>
-<p align="center">
-  <a href="https://garronej.github.io/list_org_published_modules/">Try it!</a>
-</p>
 
 This tool take as input a GitHub organization or GitHub user name and list the modules
 it publishes on the major package manager repository: npm, maven, ect.
