@@ -99,6 +99,9 @@ evtRepoModules.attach(console.log);
 
 NOTE: The result are dispatched via an [Evt](https://github.com/garronej/evt)
 
-# Development
+# Test App
 
-The test app source code is located on the [test-app branch](https://github.com/garronej/list_org_published_modules/tree/test-app) and deployed via [this workflow](https://github.com/garronej/list_org_published_modules/blob/main/.github/workflows/deploy-test-app.yaml)
+![list_repo_module](https://user-images.githubusercontent.com/6702424/126883939-04bdb304-8a25-4ce2-bf3a-cceacf21aa7f.gif)
+
+The test app source code is located on the [test-app branch](https://github.com/garronej/list_org_published_modules/tree/test-app) and deployed via [this workflow](https://github.com/garronej/list_org_published_modules/blob/main/.github/workflows/deploy-test-app.yaml). However be mindfull that it only works
+on chrome with [this extention](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en) enabled.
